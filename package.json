@@ -2,7 +2,7 @@
     "name": "theme-switcher",
     "displayName": "theme-switcher",
     "description": "",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "publisher": "latusinski",
     "repository": "https://github.com/Latusinski/vscode-theme-switcher",
     "engines": {
