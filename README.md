@@ -1,6 +1,6 @@
 # Theme Switcher for VS Code
 
-ThemeSwitcher provides a shortcut to switch between the _Default Dark+_ and the _Default Light+_ theme. Just hit ctrl+alt+T to change the current theme.
+ThemeSwitcher provides a shortcut to switch between a dark and light theme. Just hit CTRL+ALT+T (CMD+ALT+T) to change the current theme.
 
 ## Release Notes
 

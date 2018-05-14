@@ -2,8 +2,8 @@
 import * as vscode from 'vscode';
 
 const PROP_THEME = 'workbench.colorTheme';
-const THEME_DARK = 'Default Dark+';
-const THEME_LIGHT = 'Default Light+';
+const THEME_DARK = 'Kary Pro Colors － Dark';
+const THEME_LIGHT = 'Kary Pro Colors － Light';
 
 export function activate(context: vscode.ExtensionContext) {
   let disposable = vscode.commands.registerCommand('theme_swapper.swapTheme', () => {
