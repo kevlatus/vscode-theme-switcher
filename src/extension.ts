@@ -1,20 +1,45 @@
 'use strict';
 import * as vscode from 'vscode';
 
-const PROP_THEME = 'workbench.colorTheme';
-const THEME_DARK = 'Kary Pro Colors － Dark';
-const THEME_LIGHT = 'Kary Pro Colors － Light';
+import { PROP_THEME, COMMAND_SWITCH, PROP_DARK_THEME, PROP_LIGHT_THEME } from './constants';
+
+function getDarkTheme(): string {
+  return vscode.workspace.getConfiguration().get(PROP_DARK_THEME);
+}
+
+function getLightTheme(): string {
+  return vscode.workspace.getConfiguration().get(PROP_LIGHT_THEME);
+}
+
+function getCurrentTheme(): string {
+  return vscode.workspace.getConfiguration().get(PROP_THEME);
+}
+
+function getNextTheme(): string {
+  const currentTheme = getCurrentTheme();
+  switch (currentTheme) {
+    case getDarkTheme():
+      return getLightTheme();
+
+    case getLightTheme():
+      return getDarkTheme();
+
+    default:
+      return getLightTheme();
+  }
+}
+
+function setTheme(theme: string): void {
+  vscode.workspace.getConfiguration().update(PROP_THEME, theme, vscode.ConfigurationTarget.Global);
+}
+
+function switchTheme() {
+  const nextTheme = getNextTheme();
+  setTheme(nextTheme);
+}
 
 export function activate(context: vscode.ExtensionContext) {
-  let disposable = vscode.commands.registerCommand('theme_swapper.swapTheme', () => {
-    const currentTheme = (vscode.workspace.getConfiguration().get(PROP_THEME) as string).toLowerCase();
-    if (currentTheme.includes('light')) {
-      vscode.workspace.getConfiguration().update(PROP_THEME, THEME_DARK, vscode.ConfigurationTarget.Global);
-    } else {
-      vscode.workspace.getConfiguration().update(PROP_THEME, THEME_LIGHT, vscode.ConfigurationTarget.Global);
-    }
-  });
-
+  const disposable = vscode.commands.registerCommand(COMMAND_SWITCH, switchTheme);
   context.subscriptions.push(disposable);
 }
 

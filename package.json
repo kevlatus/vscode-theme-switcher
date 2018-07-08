@@ -1,50 +1,60 @@
 {
-    "name": "theme-switcher",
-    "displayName": "theme-switcher",
-    "description": "",
-    "version": "0.2.2",
-    "publisher": "latusinski",
-    "repository": "https://github.com/Latusinski/vscode-theme-switcher",
-    "extensionDependencies": [
-        "karyfoundation.theme-karyfoundation-themes"
-    ],
-    "engines": {
-        "vscode": "^1.23.0"
-    },
-    "categories": [
-        "Other"
-    ],
-    "activationEvents": [
-        "onCommand:theme_swapper.swapTheme"
-    ],
-    "main": "./out/src/extension",
-    "contributes": {
-        "commands": [
-            {
-                "command": "theme_swapper.swapTheme",
-                "title": "Swap Theme"
-            }
-        ],
-        "keybindings": [
-            {
-                "command": "theme_swapper.swapTheme",
-                "key": "ctrl+alt+T",
-                "mac": "cmd+alt+T"
-            }
-        ]
-    },
-    "scripts": {
-        "vscode:prepublish": "npm run compile",
-        "compile": "tsc -p ./",
-        "watch": "tsc -watch -p ./",
-        "postinstall": "node ./node_modules/vscode/bin/install",
-        "test": "npm run compile && node ./node_modules/vscode/bin/test"
-    },
-    "devDependencies": {
-        "@types/mocha": "^2.2.48",
-        "@types/node": "^7.0.64",
-        "mocha": "^5.2.0",
-        "typescript": "^2.8.3",
-        "vscode": "^1.1.18"
-    }
+  "name": "theme-switcher",
+  "displayName": "theme-switcher",
+  "description": "",
+  "version": "1.0.0",
+  "publisher": "latusinski",
+  "repository": "https://github.com/Latusinski/vscode-theme-switcher",
+  "engines": {
+    "vscode": "^1.23.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:theme_switcher.switchTheme"
+  ],
+  "main": "./out/src/extension",
+  "contributes": {
+    "configuration": [{
+      "title": "Theme Switcher",
+      "properties": {
+        "theme_switcher.light_theme": {
+          "type": "string",
+          "default": "Default Light+",
+          "description": "The light theme to use, when switching themes.",
+          "scope": "application"
+        },
+        "theme_switcher.dark_theme": {
+          "type": "string",
+          "default": "Default Dark+",
+          "description": "The dark theme to use, when switching themes.",
+          "scope": "application"
+        }
+      }
+    }],
+    "commands": [{
+      "command": "theme_switcher.switchTheme",
+      "title": "Swap Theme"
+    }],
+    "keybindings": [{
+      "command": "theme_switcher.switchTheme",
+      "key": "ctrl+alt+T",
+      "mac": "cmd+alt+T"
+    }]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "postinstall": "node ./node_modules/vscode/bin/install",
+    "test": "npm run compile && node ./node_modules/vscode/bin/test"
+  },
+  "devDependencies": {
+    "@types/mocha": "^2.2.48",
+    "@types/node": "^7.0.64",
+    "mocha": "^5.2.0",
+    "typescript": "^2.8.3",
+    "vscode": "^1.1.18"
+  }
 }

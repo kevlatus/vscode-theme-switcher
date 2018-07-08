@@ -10,6 +10,10 @@ This extension can be installed from [here](https://marketplace.visualstudio.com
 
 ### 1.0.0
 
+First major release. Allows for configuring the used light and dark theme by setting the properties `theme_switcher.dark_theme` and `theme_switcher.light_theme` inside VS Code.
+
+### 0.1.0
+
 Initial release
 
 
