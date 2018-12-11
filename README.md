@@ -1,5 +1,4 @@
 <a href="https://marketplace.visualstudio.com/items?itemName=latusinski.theme-switcher">![](https://img.shields.io/vscode-marketplace/v/latusinski.theme-switcher.svg)</a>
-
 <a href="https://marketplace.visualstudio.com/items?itemName=latusinski.theme-switcher">![](https://img.shields.io/vscode-marketplace/r/latusinski.theme-switcher.svg)</a>
 
 
