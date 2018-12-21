@@ -16,32 +16,38 @@
   ],
   "main": "./out/src/extension",
   "contributes": {
-    "configuration": [{
-      "title": "Theme Switcher",
-      "properties": {
-        "theme_switcher.light_theme": {
-          "type": "string",
-          "default": "Default Light+",
-          "description": "The light theme to use, when switching themes.",
-          "scope": "application"
-        },
-        "theme_switcher.dark_theme": {
-          "type": "string",
-          "default": "Default Dark+",
-          "description": "The dark theme to use, when switching themes.",
-          "scope": "application"
+    "configuration": [
+      {
+        "title": "Theme Switcher",
+        "properties": {
+          "theme_switcher.light_theme": {
+            "type": "string",
+            "default": "Default Light+",
+            "description": "The light theme to use, when switching themes.",
+            "scope": "application"
+          },
+          "theme_switcher.dark_theme": {
+            "type": "string",
+            "default": "Default Dark+",
+            "description": "The dark theme to use, when switching themes.",
+            "scope": "application"
+          }
         }
       }
-    }],
-    "commands": [{
-      "command": "theme_switcher.switchTheme",
-      "title": "Swap Theme"
-    }],
-    "keybindings": [{
-      "command": "theme_switcher.switchTheme",
-      "key": "ctrl+alt+T",
-      "mac": "cmd+alt+T"
-    }]
+    ],
+    "commands": [
+      {
+        "command": "theme_switcher.switchTheme",
+        "title": "Swap Theme"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "theme_switcher.switchTheme",
+        "key": "ctrl+alt+T",
+        "mac": "cmd+alt+T"
+      }
+    ]
   },
   "scripts": {
     "vscode:prepublish": "npm run compile",
