@@ -17,16 +17,10 @@ function getCurrentTheme(): string {
 
 function getNextTheme(): string {
   const currentTheme = getCurrentTheme();
-  switch (currentTheme) {
-    case getDarkTheme():
-      return getLightTheme();
+  const lightTheme = getLightTheme();
+  const darkTheme = getDarkTheme();
 
-    case getLightTheme():
-      return getDarkTheme();
-
-    default:
-      return getLightTheme();
-  }
+  return currentTheme === lightTheme ? darkTheme : lightTheme;
 }
 
 function setTheme(theme: string): void {
