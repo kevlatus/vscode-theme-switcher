@@ -2,7 +2,7 @@
   "name": "theme-switcher",
   "displayName": "theme-switcher",
   "description": "",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "publisher": "latusinski",
   "repository": "https://github.com/Latusinski/vscode-theme-switcher",
   "engines": {
@@ -61,8 +61,8 @@
     "@types/node": "^7.0.64",
     "@types/suncalc": "^1.8.0",
     "mocha": "^5.2.0",
-    "typescript": "^2.8.3",
-    "vscode": "^1.1.29"
+    "typescript": "^2.9.2",
+    "vscode": "^1.1.33"
   },
   "dependencies": {
     "got": "^9.6.0",
