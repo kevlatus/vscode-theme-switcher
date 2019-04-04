@@ -12,7 +12,7 @@
     "Other"
   ],
   "activationEvents": [
-    "onCommand:theme_switcher.switchTheme"
+    "*"
   ],
   "main": "./out/src/extension",
   "contributes": {
@@ -59,8 +59,14 @@
   "devDependencies": {
     "@types/mocha": "^2.2.48",
     "@types/node": "^7.0.64",
+    "@types/suncalc": "^1.8.0",
     "mocha": "^5.2.0",
     "typescript": "^2.8.3",
-    "vscode": "^1.1.18"
+    "vscode": "^1.1.29"
+  },
+  "dependencies": {
+    "got": "^9.6.0",
+    "request": "^2.88.0",
+    "suncalc": "^1.8.0"
   }
 }
