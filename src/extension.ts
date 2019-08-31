@@ -1,11 +1,7 @@
 'use strict';
 import * as vscode from 'vscode';
 
-import { PROP_THEME, COMMAND_SWITCH, PROP_DARK_THEME, PROP_LIGHT_THEME } from './constants';
-import { uuid } from './util';
-import { trackEvent } from './analytics';
-
-let userId: string;
+import {PROP_THEME, COMMAND_SWITCH, PROP_DARK_THEME, PROP_LIGHT_THEME} from './constants';
 
 function getDarkTheme(): string {
   return vscode.workspace.getConfiguration().get(PROP_DARK_THEME);
@@ -34,19 +30,11 @@ function setTheme(theme: string): void {
 async function switchTheme() {
   const nextTheme = getNextTheme();
   setTheme(nextTheme);
-  
-  await trackEvent(userId, 'command', 'switch-theme', 'switch-theme', 'switch-theme');
 }
 
 export function activate(context: vscode.ExtensionContext) {
   const disposable = vscode.commands.registerCommand(COMMAND_SWITCH, switchTheme);
   context.subscriptions.push(disposable);
-
-  userId = context.globalState.get<string>('userId');
-  if (!userId) {
-    userId = uuid();
-    context.globalState.update('userId', userId);
-  }
 }
 
 // this method is called when your extension is deactivated
