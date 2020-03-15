@@ -69,7 +69,7 @@
     "webpack-cli": "^3.3.0"
   },
   "dependencies": {
-    "got": "^9.6.0",
+    "got": "^10.6.0",
     "suncalc": "^1.8.0"
   }
 }
