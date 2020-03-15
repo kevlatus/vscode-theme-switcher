@@ -1,0 +1,26 @@
+name: Publish
+on:
+  - release
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          ref: ${{ GITHUB_REF##*/ }}
+
+      - name: Install Node.js
+        uses: actions/setup-node@v1
+
+      - run: npm ci
+
+      - name: Install vsce
+        run: npm i -g vsce
+
+      - name: Package extension
+        run: vsce package
+
+      - name: Publish extension
+        run: vsce publish -p ${{ secrets.VSCE_TOKEN }}
