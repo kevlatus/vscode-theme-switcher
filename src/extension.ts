@@ -1,7 +1,11 @@
 'use strict';
 import * as vscode from 'vscode';
 
-import {PROP_THEME, COMMAND_SWITCH, PROP_DARK_THEME, PROP_LIGHT_THEME} from './constants';
+export const NAMESPACE = 'theme_switcher';
+export const COMMAND_SWITCH = `${NAMESPACE}.switchTheme`;
+export const PROP_THEME = 'workbench.colorTheme';
+export const PROP_DARK_THEME = `${NAMESPACE}.dark_theme`;
+export const PROP_LIGHT_THEME = `${NAMESPACE}.light_theme`;
 
 function getDarkTheme(): string {
   return vscode.workspace.getConfiguration().get(PROP_DARK_THEME);
