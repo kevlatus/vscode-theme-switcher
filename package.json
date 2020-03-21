@@ -59,7 +59,7 @@
   },
   "devDependencies": {
     "@types/mocha": "^7.0.2",
-    "@types/node": "^12.6.9",
+    "@types/node": "^13.9.2",
     "@types/suncalc": "^1.8.0",
     "mocha": "^7.1.0",
     "ts-loader": "^6.0.4",
